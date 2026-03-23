@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — EduNova</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Edu<span>Nova</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="register.html" class="btn-nav">Register</a></li>
+      <li><a href="login.html" class="btn-nav btn-outline">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Get In <span>Touch</span></h1>
+    <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+  </section>
+
+  <section class="contact-section">
+
+    <!-- CONTACT INFO CARDS -->
+    <div class="contact-info-grid">
+      <div class="contact-info-card">
+        <div class="contact-icon">📍</div>
+        <h3>Our Address</h3>
+        <p>Plot No. 24, Chaitanya Bharathi Rd,<br/>Gandipet, Hyderabad,<br/>Telangana — 500075</p>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon">📧</div>
+        <h3>Email Us</h3>
+        <p>info@edunova.com</p>
+        <p>support@edunova.com</p>
+        <p>admissions@edunova.com</p>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon">📞</div>
+        <h3>Call Us</h3>
+        <p>+91 98765 43210</p>
+        <p>+91 80041 56789</p>
+        <p>Mon–Sat: 9:00 AM – 6:00 PM</p>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon">🌐</div>
+        <h3>Follow Us</h3>
+        <p>Twitter: @EduNova</p>
+        <p>LinkedIn: EduNova Learning</p>
+        <p>Instagram: @edunova.official</p>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form-wrapper">
+      <h2>Send Us a <span>Message</span></h2>
+
+      <div id="contact-success" class="success-banner" style="display:none;">
+        ✅ Message sent successfully! We'll get back to you within 24 hours.
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-name">Your Name</label>
+            <input type="text" id="c-name" placeholder="Full name"/>
+            <span class="error" id="err-c-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="c-email">Your Email</label>
+            <input type="email" id="c-email" placeholder="you@example.com"/>
+            <span class="error" id="err-c-email"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="c-subject">Subject</label>
+          <input type="text" id="c-subject" placeholder="How can we help you?"/>
+          <span class="error" id="err-c-subject"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="c-category">Category</label>
+          <select id="c-category">
+            <option value="">Select a category</option>
+            <option value="course">Course Inquiry</option>
+            <option value="technical">Technical Support</option>
+            <option value="billing">Billing & Payments</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error" id="err-c-category"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" rows="5" placeholder="Tell us more about your inquiry..."></textarea>
+          <span class="error" id="err-c-message"></span>
+        </div>
+
+        <button type="button" class="btn-primary" onclick="submitContact()">Send Message →</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <p>📍 Find Us on the Map</p>
+      <small>Chaitanya Bharathi Institute of Technology, Hyderabad, Telangana 500075</small>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Edu<span>Nova</span></div>
+        <p>Empowering learners worldwide with quality education and expert-led courses.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Hyderabad, Telangana</p>
+        <p>📧 info@edunova.com</p>
+        <p>📞 +91 98765 43210</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 EduNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    function clearContactErrors() {
+      document.querySelectorAll('.error').forEach(e => e.textContent = '');
+      document.querySelectorAll('input, textarea, select').forEach(i => i.classList.remove('input-error'));
+    }
+
+    function setContactError(id, msg, inputId) {
+      document.getElementById(id).textContent = msg;
+      if (inputId) document.getElementById(inputId).classList.add('input-error');
+    }
+
+    function submitContact() {
+      clearContactErrors();
+      let valid = true;
+
+      const name = document.getElementById('c-name').value.trim();
+      const email = document.getElementById('c-email').value.trim();
+      const subject = document.getElementById('c-subject').value.trim();
+      const category = document.getElementById('c-category').value;
+      const message = document.getElementById('c-message').value.trim();
+
+      if (!name || name.length < 2) {
+        setContactError('err-c-name', 'Please enter your name.', 'c-name');
+        valid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        setContactError('err-c-email', 'Please enter a valid email.', 'c-email');
+        valid = false;
+      }
+
+      if (!subject || subject.length < 5) {
+        setContactError('err-c-subject', 'Subject must be at least 5 characters.', 'c-subject');
+        valid = false;
+      }
+
+      if (!category) {
+        setContactError('err-c-category', 'Please select a category.', 'c-category');
+        valid = false;
+      }
+
+      if (!message || message.length < 20) {
+        setContactError('err-c-message', 'Message must be at least 20 characters.', 'c-message');
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('contact-success').style.display = 'block';
+        document.getElementById('contactForm').reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
