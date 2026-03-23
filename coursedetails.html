@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Details — EduNova</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Edu<span>Nova</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="btn-nav">Register</a></li>
+      <li><a href="login.html" class="btn-nav btn-outline">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <section class="course-detail-hero">
+    <div class="detail-hero-content">
+      <span class="course-category">Web Dev</span>
+      <h1>Full Stack Web Development</h1>
+      <p class="course-tagline">Master the art of building complete, production-ready web applications from scratch.</p>
+      <div class="detail-meta">
+        <span>⭐ 4.9</span>
+        <span>(2,341 ratings)</span>
+        <span>👥 12,450 students</span>
+        <span>🕒 52 hours</span>
+        <span>📅 Last updated: Jan 2026</span>
+      </div>
+      <div class="detail-instructor-tag">
+        <div class="avatar-sm">RS</div>
+        <span>Created by <strong>Rahul Sharma</strong></span>
+      </div>
+    </div>
+    <div class="enroll-card">
+      <div class="course-preview-icon">💻</div>
+      <div class="price-block">
+        <span class="price-big">₹1,999</span>
+        <span class="price-original">₹4,999</span>
+        <span class="discount-tag">60% OFF</span>
+      </div>
+      <p class="offer-timer">⏰ <strong>2 days</strong> left at this price!</p>
+      <a href="register.html" class="btn-primary btn-block" onclick="enrollNow()">Enroll Now</a>
+      <p class="money-back">30-Day Money-Back Guarantee</p>
+      <ul class="course-includes">
+        <li>✅ 52 hours on-demand video</li>
+        <li>✅ 35 coding exercises</li>
+        <li>✅ Full lifetime access</li>
+        <li>✅ Access on mobile and desktop</li>
+        <li>✅ Certificate of completion</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COURSE DESCRIPTION -->
+  <section class="course-detail-body">
+    <div class="detail-main">
+
+      <div class="detail-section">
+        <h2>What You'll Learn</h2>
+        <div class="learn-grid">
+          <p>✔ Build full-stack web apps with HTML, CSS, JavaScript</p>
+          <p>✔ Master React.js and modern frontend development</p>
+          <p>✔ Create RESTful APIs with Node.js and Express</p>
+          <p>✔ Work with MongoDB and SQL databases</p>
+          <p>✔ Implement authentication and authorization</p>
+          <p>✔ Deploy apps to cloud (Heroku, AWS, Vercel)</p>
+          <p>✔ Write clean, maintainable code following best practices</p>
+          <p>✔ Version control with Git and GitHub</p>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2>About the Instructor</h2>
+        <div class="instructor-profile">
+          <div class="avatar-lg">RS</div>
+          <div>
+            <h3>Rahul Sharma</h3>
+            <p class="instructor-title">Senior Software Engineer & Educator</p>
+            <p>⭐ 4.9 Instructor Rating | 👥 45,000+ Students | 📚 8 Courses</p>
+            <p style="margin-top:0.8rem;">Rahul has 10+ years of industry experience at companies like Google, Flipkart, and Startups. He is passionate about making web development accessible and fun for everyone.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2>Course Curriculum</h2>
+        <p class="curriculum-summary">52 hours • 12 Sections • 187 Lectures</p>
+        <div class="curriculum">
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 1: Introduction to Web Development</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 What is Web Development? (5 min)</li>
+              <li>🎬 Setting up your environment (12 min)</li>
+              <li>🎬 How the Internet Works (8 min)</li>
+            </ul>
+          </div>
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 2: HTML5 Fundamentals</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 HTML Structure and Tags (15 min)</li>
+              <li>🎬 Forms and Input Elements (20 min)</li>
+              <li>🎬 Semantic HTML (10 min)</li>
+              <li>📝 Quiz: HTML Basics</li>
+            </ul>
+          </div>
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 3: CSS3 & Modern Layouts</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 CSS Selectors and Properties (18 min)</li>
+              <li>🎬 Flexbox Layout (22 min)</li>
+              <li>🎬 CSS Grid System (25 min)</li>
+              <li>🎬 Responsive Design (30 min)</li>
+            </ul>
+          </div>
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 4: JavaScript Essentials</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 Variables and Data Types (15 min)</li>
+              <li>🎬 Functions and Scope (20 min)</li>
+              <li>🎬 DOM Manipulation (30 min)</li>
+              <li>🎬 Async JavaScript (35 min)</li>
+              <li>💻 Project: Interactive Quiz App</li>
+            </ul>
+          </div>
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 5: React.js</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 React Fundamentals & JSX (25 min)</li>
+              <li>🎬 Components and Props (20 min)</li>
+              <li>🎬 State and Hooks (40 min)</li>
+              <li>💻 Project: E-commerce Frontend</li>
+            </ul>
+          </div>
+          <div class="curriculum-item" onclick="toggleCurriculum(this)">
+            <div class="curr-header">
+              <span>📁 Section 6–12: Backend, Database & Deployment</span>
+              <span class="curr-toggle">▼</span>
+            </div>
+            <ul class="curr-content">
+              <li>🎬 Node.js & Express.js (45 min)</li>
+              <li>🎬 MongoDB & Mongoose (40 min)</li>
+              <li>🎬 Authentication with JWT (35 min)</li>
+              <li>🎬 Deploying to Vercel & AWS (30 min)</li>
+              <li>💻 Capstone: Full Stack Blog App</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2>Course Details</h2>
+        <div class="details-table">
+          <div class="detail-row"><span>Duration</span><strong>52 hours of video content</strong></div>
+          <div class="detail-row"><span>Level</span><strong>Beginner to Advanced</strong></div>
+          <div class="detail-row"><span>Language</span><strong>English / Hindi</strong></div>
+          <div class="detail-row"><span>Certificate</span><strong>Yes, on completion</strong></div>
+          <div class="detail-row"><span>Access</span><strong>Lifetime</strong></div>
+          <div class="detail-row"><span>Projects</span><strong>5 Real-World Projects</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 EduNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+    function enrollNow() {
+      alert('Redirecting to registration...');
+    }
+    function toggleCurriculum(el) {
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
