@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — EduNova</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Edu<span>Nova</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="btn-nav active">Register</a></li>
+      <li><a href="login.html" class="btn-nav btn-outline">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Create Your Account</h2>
+        <p>Join 50,000+ learners on EduNova today!</p>
+      </div>
+
+      <div id="successMsg" class="success-banner" style="display:none;">
+        ✅ Registration successful! Welcome to EduNova!
+      </div>
+
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" placeholder="e.g. Arjun Kumar" />
+          <span class="error" id="err-name"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" />
+          <span class="error" id="err-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-phone">Phone Number</label>
+          <input type="tel" id="reg-phone" placeholder="+91 98765 43210" />
+          <span class="error" id="err-phone"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-pass">Password</label>
+          <div class="input-eye">
+            <input type="password" id="reg-pass" placeholder="Min 8 characters" />
+            <span class="eye-toggle" onclick="togglePass('reg-pass', this)">👁</span>
+          </div>
+          <div class="password-strength" id="strength-bar">
+            <div class="strength-fill" id="strength-fill"></div>
+          </div>
+          <small id="strength-label"></small>
+          <span class="error" id="err-pass"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-confirm">Confirm Password</label>
+          <div class="input-eye">
+            <input type="password" id="reg-confirm" placeholder="Re-enter password" />
+            <span class="eye-toggle" onclick="togglePass('reg-confirm', this)">👁</span>
+          </div>
+          <span class="error" id="err-confirm"></span>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="reg-terms" />
+          <label for="reg-terms">I agree to the <a href="#">Terms & Conditions</a></label>
+          <span class="error" id="err-terms"></span>
+        </div>
+
+        <button type="button" class="btn-primary btn-block" onclick="validateRegister()">Create Account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 EduNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    function togglePass(id, icon) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = '🙈';
+      } else {
+        input.type = 'password';
+        icon.textContent = '👁';
+      }
+    }
+
+    document.getElementById('reg-pass').addEventListener('input', function () {
+      const val = this.value;
+      const fill = document.getElementById('strength-fill');
+      const label = document.getElementById('strength-label');
+      let strength = 0;
+      if (val.length >= 8) strength++;
+      if (/[A-Z]/.test(val)) strength++;
+      if (/[0-9]/.test(val)) strength++;
+      if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+      const levels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+      const colors = ['', '#e74c3c', '#f39c12', '#3498db', '#2ecc71'];
+      fill.style.width = (strength * 25) + '%';
+      fill.style.background = colors[strength];
+      label.textContent = strength > 0 ? levels[strength] : '';
+    });
+
+    function clearErrors() {
+      document.querySelectorAll('.error').forEach(e => e.textContent = '');
+      document.querySelectorAll('input').forEach(i => i.classList.remove('input-error'));
+    }
+
+    function setError(id, msg, inputId) {
+      document.getElementById(id).textContent = msg;
+      if (inputId) document.getElementById(inputId).classList.add('input-error');
+    }
+
+    function validateRegister() {
+      clearErrors();
+      let valid = true;
+
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
+      const pass = document.getElementById('reg-pass').value;
+      const confirm = document.getElementById('reg-confirm').value;
+      const terms = document.getElementById('reg-terms').checked;
+
+      if (!name || name.length < 3) {
+        setError('err-name', 'Full name must be at least 3 characters.', 'reg-name');
+        valid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        setError('err-email', 'Please enter a valid email address.', 'reg-email');
+        valid = false;
+      }
+
+      const phoneRegex = /^[+]?[\d\s\-]{10,15}$/;
+      if (!phone || !phoneRegex.test(phone)) {
+        setError('err-phone', 'Please enter a valid phone number (10–15 digits).', 'reg-phone');
+        valid = false;
+      }
+
+      if (!pass || pass.length < 8) {
+        setError('err-pass', 'Password must be at least 8 characters.', 'reg-pass');
+        valid = false;
+      } else if (!/[A-Z]/.test(pass)) {
+        setError('err-pass', 'Password must contain at least one uppercase letter.', 'reg-pass');
+        valid = false;
+      } else if (!/[0-9]/.test(pass)) {
+        setError('err-pass', 'Password must contain at least one number.', 'reg-pass');
+        valid = false;
+      }
+
+      if (pass !== confirm) {
+        setError('err-confirm', 'Passwords do not match.', 'reg-confirm');
+        valid = false;
+      }
+
+      if (!terms) {
+        setError('err-terms', 'You must accept the Terms & Conditions.', null);
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('registerForm').reset();
+        document.getElementById('strength-fill').style.width = '0';
+        document.getElementById('strength-label').textContent = '';
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 2500);
+      }
+    }
+  </script>
+</body>
+</html>
