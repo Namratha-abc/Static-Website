@@ -99,7 +99,7 @@ body {
   display: flex;
   align-items: center;
   padding: 140px 8% 80px;
-  background: url("images/hero-bg.png") center/cover no-repeat;
+  background: url("hero-bg.png") center/cover no-repeat;
   overflow: hidden;
 }
 
