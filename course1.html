@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses — EduNova</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Edu<span>Nova</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="btn-nav">Register</a></li>
+      <li><a href="login.html" class="btn-nav btn-outline">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>All <span>Courses</span></h1>
+    <p>Explore our wide range of expert-led courses and start your learning journey today.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="courses-page">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCourses('all', this)">All</button>
+      <button class="filter-btn" onclick="filterCourses('webdev', this)">Web Dev</button>
+      <button class="filter-btn" onclick="filterCourses('aiml', this)">AI / ML</button>
+      <button class="filter-btn" onclick="filterCourses('design', this)">Design</button>
+      <button class="filter-btn" onclick="filterCourses('data', this)">Data Science</button>
+      <button class="filter-btn" onclick="filterCourses('cyber', this)">Cybersecurity</button>
+    </div>
+
+    <div class="courses-grid" id="coursesGrid">
+
+      <!-- Web Dev -->
+      <div class="course-card big" data-cat="webdev">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#667eea,#764ba2);">
+          <span>💻</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">Web Dev</span>
+          <h3>Full Stack Web Development</h3>
+          <p class="instructor">👤 Rahul Sharma</p>
+          <p class="course-desc">Master HTML, CSS, JavaScript, React, Node.js, and MongoDB to build complete web applications.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.9 (2,341 ratings)</span>
+            <span class="price">₹1,999</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <div class="course-card big" data-cat="webdev">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#f7971e,#ffd200);">
+          <span>⚛️</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">Web Dev</span>
+          <h3>React JS — Complete Guide</h3>
+          <p class="instructor">👤 Vikram Anand</p>
+          <p class="course-desc">Build fast, scalable UIs with React Hooks, Redux Toolkit, and React Router.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.8 (1,120 ratings)</span>
+            <span class="price">₹1,299</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <!-- AI/ML -->
+      <div class="course-card big" data-cat="aiml">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#f093fb,#f5576c);">
+          <span>🤖</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">AI / ML</span>
+          <h3>Machine Learning A-Z</h3>
+          <p class="instructor">👤 Priya Nair</p>
+          <p class="course-desc">Comprehensive ML course covering supervised, unsupervised learning, and deep neural networks.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.8 (1,874 ratings)</span>
+            <span class="price">₹2,499</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <div class="course-card big" data-cat="aiml">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#43e97b,#38f9d7);">
+          <span>🧠</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">AI / ML</span>
+          <h3>Deep Learning with TensorFlow</h3>
+          <p class="instructor">👤 Dr. Anil Reddy</p>
+          <p class="course-desc">Build and train neural networks using TensorFlow and Keras for real-world applications.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.7 (986 ratings)</span>
+            <span class="price">₹2,999</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="course-card big" data-cat="design">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#4facfe,#00f2fe);">
+          <span>🎨</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">Design</span>
+          <h3>UI/UX Design Masterclass</h3>
+          <p class="instructor">👤 Sneha Patel</p>
+          <p class="course-desc">Learn Figma, design principles, user research, and create stunning, user-centred interfaces.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.7 (990 ratings)</span>
+            <span class="price">₹1,499</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <!-- Data Science -->
+      <div class="course-card big" data-cat="data">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#fa709a,#fee140);">
+          <span>📊</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">Data Science</span>
+          <h3>Data Science with Python</h3>
+          <p class="instructor">👤 Kiran Bose</p>
+          <p class="course-desc">Master Pandas, NumPy, Matplotlib, and Scikit-learn for complete data science workflows.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.8 (1,450 ratings)</span>
+            <span class="price">₹1,799</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+      <!-- Cyber -->
+      <div class="course-card big" data-cat="cyber">
+        <div class="course-thumb" style="background: linear-gradient(135deg,#30cfd0,#667eea);">
+          <span>🔐</span>
+        </div>
+        <div class="course-info">
+          <span class="course-category">Cybersecurity</span>
+          <h3>Ethical Hacking & Cybersecurity</h3>
+          <p class="instructor">👤 Suresh Menon</p>
+          <p class="course-desc">Learn penetration testing, network security, and ethical hacking techniques used by pros.</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="course-meta">
+            <span class="rating">4.9 (2,100 ratings)</span>
+            <span class="price">₹2,199</span>
+          </div>
+          <a href="course-details.html" class="btn-primary btn-sm">View Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 EduNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+    function filterCourses(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.course-card.big').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
