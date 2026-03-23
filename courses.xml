@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="courses.xsd">
+
+  <website>
+    <name>EduNova</name>
+    <tagline>Learn Without Limits</tagline>
+    <contact>
+      <email>info@edunova.com</email>
+      <phone>+91 98765 43210</phone>
+      <address>Plot No. 24, Gandipet, Hyderabad, Telangana - 500075</address>
+    </contact>
+  </website>
+
+  <courses>
+
+    <course id="C001">
+      <title>Full Stack Web Development</title>
+      <category>Web Dev</category>
+      <instructor>
+        <name>Rahul Sharma</name>
+        <rating>4.9</rating>
+        <experience>10 years</experience>
+      </instructor>
+      <price currency="INR">1999</price>
+      <originalPrice currency="INR">4999</originalPrice>
+      <rating>4.9</rating>
+      <totalRatings>2341</totalRatings>
+      <students>12450</students>
+      <duration>52 hours</duration>
+      <level>Beginner to Advanced</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Master HTML, CSS, JavaScript, React, Node.js, and MongoDB to build complete web applications from scratch.</description>
+      <topics>
+        <topic>HTML5 and CSS3</topic>
+        <topic>JavaScript ES6+</topic>
+        <topic>React.js</topic>
+        <topic>Node.js and Express</topic>
+        <topic>MongoDB and Mongoose</topic>
+        <topic>RESTful APIs</topic>
+        <topic>Authentication and JWT</topic>
+        <topic>Deployment and DevOps</topic>
+      </topics>
+      <lastUpdated>2026-01-15</lastUpdated>
+    </course>
+
+    <course id="C002">
+      <title>Machine Learning A-Z</title>
+      <category>AI / ML</category>
+      <instructor>
+        <name>Priya Nair</name>
+        <rating>4.8</rating>
+        <experience>8 years</experience>
+      </instructor>
+      <price currency="INR">2499</price>
+      <originalPrice currency="INR">5999</originalPrice>
+      <rating>4.8</rating>
+      <totalRatings>1874</totalRatings>
+      <students>9800</students>
+      <duration>45 hours</duration>
+      <level>Intermediate</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Comprehensive ML course covering supervised, unsupervised learning, and deep neural networks with Python.</description>
+      <topics>
+        <topic>Python for ML</topic>
+        <topic>Supervised Learning</topic>
+        <topic>Unsupervised Learning</topic>
+        <topic>Neural Networks</topic>
+        <topic>Scikit-learn</topic>
+        <topic>Model Evaluation</topic>
+        <topic>Feature Engineering</topic>
+        <topic>Real-world Projects</topic>
+      </topics>
+      <lastUpdated>2026-02-10</lastUpdated>
+    </course>
+
+    <course id="C003">
+      <title>UI/UX Design Masterclass</title>
+      <category>Design</category>
+      <instructor>
+        <name>Sneha Patel</name>
+        <rating>4.7</rating>
+        <experience>7 years</experience>
+      </instructor>
+      <price currency="INR">1499</price>
+      <originalPrice currency="INR">3999</originalPrice>
+      <rating>4.7</rating>
+      <totalRatings>990</totalRatings>
+      <students>6200</students>
+      <duration>38 hours</duration>
+      <level>Beginner to Intermediate</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Learn Figma, design principles, user research, and create stunning, user-centred interfaces and prototypes.</description>
+      <topics>
+        <topic>Design Principles</topic>
+        <topic>Figma Essentials</topic>
+        <topic>User Research</topic>
+        <topic>Wireframing</topic>
+        <topic>Prototyping</topic>
+        <topic>Usability Testing</topic>
+        <topic>Design Systems</topic>
+        <topic>Portfolio Projects</topic>
+      </topics>
+      <lastUpdated>2026-01-28</lastUpdated>
+    </course>
+
+    <course id="C004">
+      <title>Data Science with Python</title>
+      <category>Data Science</category>
+      <instructor>
+        <name>Kiran Bose</name>
+        <rating>4.8</rating>
+        <experience>9 years</experience>
+      </instructor>
+      <price currency="INR">1799</price>
+      <originalPrice currency="INR">4499</originalPrice>
+      <rating>4.8</rating>
+      <totalRatings>1450</totalRatings>
+      <students>8100</students>
+      <duration>40 hours</duration>
+      <level>Beginner to Intermediate</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Master Pandas, NumPy, Matplotlib, and Scikit-learn for complete data science workflows and analysis.</description>
+      <topics>
+        <topic>Python Basics</topic>
+        <topic>NumPy and Pandas</topic>
+        <topic>Data Visualization</topic>
+        <topic>Statistical Analysis</topic>
+        <topic>Machine Learning Basics</topic>
+        <topic>SQL for Data Science</topic>
+        <topic>EDA Projects</topic>
+        <topic>Capstone Project</topic>
+      </topics>
+      <lastUpdated>2026-02-20</lastUpdated>
+    </course>
+
+    <course id="C005">
+      <title>Ethical Hacking and Cybersecurity</title>
+      <category>Cybersecurity</category>
+      <instructor>
+        <name>Suresh Menon</name>
+        <rating>4.9</rating>
+        <experience>12 years</experience>
+      </instructor>
+      <price currency="INR">2199</price>
+      <originalPrice currency="INR">5499</originalPrice>
+      <rating>4.9</rating>
+      <totalRatings>2100</totalRatings>
+      <students>11000</students>
+      <duration>48 hours</duration>
+      <level>Intermediate to Advanced</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Learn penetration testing, network security, and ethical hacking techniques used by security professionals.</description>
+      <topics>
+        <topic>Network Fundamentals</topic>
+        <topic>Penetration Testing</topic>
+        <topic>Web Application Security</topic>
+        <topic>Kali Linux</topic>
+        <topic>OWASP Top 10</topic>
+        <topic>Cryptography</topic>
+        <topic>Incident Response</topic>
+        <topic>CEH Exam Prep</topic>
+      </topics>
+      <lastUpdated>2026-03-01</lastUpdated>
+    </course>
+
+    <course id="C006">
+      <title>React JS — Complete Guide</title>
+      <category>Web Dev</category>
+      <instructor>
+        <name>Vikram Anand</name>
+        <rating>4.8</rating>
+        <experience>6 years</experience>
+      </instructor>
+      <price currency="INR">1299</price>
+      <originalPrice currency="INR">3499</originalPrice>
+      <rating>4.8</rating>
+      <totalRatings>1120</totalRatings>
+      <students>7400</students>
+      <duration>32 hours</duration>
+      <level>Intermediate</level>
+      <language>English</language>
+      <certificate>true</certificate>
+      <description>Build fast, scalable UIs with React Hooks, Redux Toolkit, React Router, and modern best practices.</description>
+      <topics>
+        <topic>React Fundamentals</topic>
+        <topic>JSX and Components</topic>
+        <topic>Hooks (useState, useEffect)</topic>
+        <topic>Redux Toolkit</topic>
+        <topic>React Router v6</topic>
+        <topic>Context API</topic>
+        <topic>Testing React Apps</topic>
+        <topic>Deployment</topic>
+      </topics>
+      <lastUpdated>2026-02-05</lastUpdated>
+    </course>
+
+  </courses>
+
+</catalog> 
