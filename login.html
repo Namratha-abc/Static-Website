@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — EduNova</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Edu<span>Nova</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="btn-nav">Register</a></li>
+      <li><a href="login.html" class="btn-nav btn-outline active">Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Welcome Back!</h2>
+        <p>Login to continue your learning journey.</p>
+      </div>
+
+      <div id="loginSuccessMsg" class="success-banner" style="display:none;">
+        ✅ Login successful! Redirecting to your dashboard...
+      </div>
+      <div id="loginErrorMsg" class="error-banner" style="display:none;">
+        ❌ Invalid email or password. Please try again.
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="you@example.com"/>
+          <span class="error" id="err-login-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="login-pass">Password</label>
+          <div class="input-eye">
+            <input type="password" id="login-pass" placeholder="Enter your password"/>
+            <span class="eye-toggle" onclick="togglePass('login-pass', this)">👁</span>
+          </div>
+          <span class="error" id="err-login-pass"></span>
+        </div>
+
+        <div class="form-group checkbox-group remember-row">
+          <div>
+            <input type="checkbox" id="remember-me"/>
+            <label for="remember-me">Remember me</label>
+          </div>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="button" class="btn-primary btn-block" onclick="validateLogin()">Login</button>
+      </form>
+
+      <div class="divider"><span>or continue with</span></div>
+      <div class="social-btns">
+        <button class="social-btn" onclick="alert('Google login not implemented in static demo.')">🔵 Google</button>
+        <button class="social-btn" onclick="alert('GitHub login not implemented in static demo.')">⚫ GitHub</button>
+      </div>
+
+      <p class="auth-switch">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 EduNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    function togglePass(id, icon) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+      icon.textContent = input.type === 'password' ? '👁' : '🙈';
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.error').forEach(e => e.textContent = '');
+      document.querySelectorAll('input').forEach(i => i.classList.remove('input-error'));
+      document.getElementById('loginErrorMsg').style.display = 'none';
+      document.getElementById('loginSuccessMsg').style.display = 'none';
+    }
+
+    function setError(id, msg, inputId) {
+      document.getElementById(id).textContent = msg;
+      if (inputId) document.getElementById(inputId).classList.add('input-error');
+    }
+
+    function validateLogin() {
+      clearErrors();
+      let valid = true;
+
+      const email = document.getElementById('login-email').value.trim();
+      const pass = document.getElementById('login-pass').value;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        setError('err-login-email', 'Please enter a valid email address.', 'login-email');
+        valid = false;
+      }
+
+      if (!pass || pass.length < 6) {
+        setError('err-login-pass', 'Password must be at least 6 characters.', 'login-pass');
+        valid = false;
+      }
+
+      if (valid) {
+        // Demo: Accept any valid format credentials
+        document.getElementById('loginSuccessMsg').style.display = 'block';
+        document.getElementById('loginForm').reset();
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 2000);
+      }
+    }
+  </script>
+</body>
+</html>
